@@ -1,0 +1,26 @@
+{
+    "name": "ajgl/composer-symlinker",
+    "description": "Composer script to symlink assets.",
+    "keywords": ["composer", "assets", "composer"],
+    "homepage": "https://github.com/ajgarlag/AjglComposerSymlinker",
+    "license": "MIT",
+    "authors": [
+      {
+        "name": "Antonio J. García Lagar",
+        "email": "aj@garcialagar.es",
+        "homepage": "http://aj.garcialagar.es",
+        "role": "developer"
+      }
+    ],
+    "require": {
+        "symfony/filesystem": ">=2.1.0"
+    },
+    "require-dev": {
+        "composer/composer": "*@dev"
+    },
+    "autoload": {
+        "psr-0": {
+            "Ajgl": "src/"
+        }
+    }
+}

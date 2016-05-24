@@ -1,14 +1,21 @@
 <?php
-namespace Ajgl\Composer;
-/**
- * @category   Ajgl
- * @package    Ajgl\Composer
+
+/*
+ * AJGL Composer Symlinker
+ *
+ * Copyright (C) Antonio J. García Lagar <aj@garcialagar.es>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
  */
+
+namespace Ajgl\Composer;
+
 use Composer\Script\Event;
 use Symfony\Component\Filesystem\Filesystem;
 
 /**
- * Script to symlink resources installed with composer
+ * Script to symlink resources installed with composer.
  *
  * @author Antonio J. García Lagar <aj@garcialagar.es>
  */
@@ -22,8 +29,8 @@ class ScriptSymlinker
 
         foreach ($symlinks as $package => $symlinksDefinition) {
             foreach ($symlinksDefinition as $origin => $target) {
-                $originPath = realpath($vendorDir) . "/$package/$origin";
-                $targetPath = realpath($vendorDir) . "/$target";
+                $originPath = realpath($vendorDir)."/$package/$origin";
+                $targetPath = realpath($vendorDir)."/$target";
                 $event->getIO()->write("Symlinking <comment>$originPath</comment> --> <comment>$targetPath</comment>");
                 $fs->symlink($originPath, $targetPath);
             }
@@ -42,4 +49,3 @@ class ScriptSymlinker
         return $symlinks;
     }
 }
-

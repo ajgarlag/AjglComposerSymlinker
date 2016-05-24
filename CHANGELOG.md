@@ -9,6 +9,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Changed
 - Migration to PSR-4
+- Improved CS
 
 ## 0.1.0 - 2016-05-24
 

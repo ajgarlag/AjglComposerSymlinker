@@ -19,8 +19,8 @@
         "composer/composer": "*@dev"
     },
     "autoload": {
-        "psr-0": {
-            "Ajgl": "src/"
+        "psr-4": {
+            "Ajgl\\Composer\\": "src/"
         }
     }
 }

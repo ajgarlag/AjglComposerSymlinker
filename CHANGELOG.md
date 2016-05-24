@@ -11,6 +11,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 - Migration to PSR-4
 - Improved CS
 - Improved composer.json
+- Leverage composer filesystem utility class
 
 ## 0.1.0 - 2016-05-24
 

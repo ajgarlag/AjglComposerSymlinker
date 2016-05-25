@@ -12,6 +12,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 - Improved CS
 - Improved composer.json
 - Leverage composer filesystem utility class
+- Improve README
 
 ## 0.1.0 - 2016-05-24
 

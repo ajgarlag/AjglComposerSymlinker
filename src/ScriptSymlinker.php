@@ -56,7 +56,9 @@ class ScriptSymlinker
 
                     $event->getIO()->write("  Symlinking <comment>$targetPath</comment> to <comment>$linkPath</comment>");
                     $fs->ensureDirectoryExists(dirname($linkPath));
-                    $fs->relativeSymlink($targetPath, $linkPath);
+                    if (!$fs->relativeSymlink($targetPath, $linkPath) && !is_dir($targetPath)) {
+                        copy($targetPath, $linkPath);
+                    }
                 }
             }
         }

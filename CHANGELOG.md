@@ -4,6 +4,8 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+## [0.2.1]
+
 ### Changed
 - Optimized symlink to package matching
 - Update php-cs-fixer configuration
@@ -22,5 +24,6 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## 0.1.0 - 2016-05-24
 
-[unreleased]: https://github.com/ajgarlag/AjglComposerSymlinker/compare/0.2.0...master
+[unreleased]: https://github.com/ajgarlag/AjglComposerSymlinker/compare/0.2.1...master
+[0.2.1]: https://github.com/ajgarlag/AjglComposerSymlinker/compare/0.2.0...0.2.1
 [0.2.0]: https://github.com/ajgarlag/AjglComposerSymlinker/compare/0.1.0...0.2.0

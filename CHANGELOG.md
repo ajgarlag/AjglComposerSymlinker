@@ -4,6 +4,9 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+### Changed
+- Optimized symlink to package matching
+
 ## [0.2.0] - 2016-05-27
 
 ### Added

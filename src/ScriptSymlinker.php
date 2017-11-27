@@ -26,11 +26,11 @@ class ScriptSymlinker
         $symlinks = static::getSymlinks($event);
         $fs = new Filesystem();
 
-        foreach ($event->getComposer()->getRepositoryManager()->getLocalRepository()->getPackages() as $package) {
-            if (isset($symlinks[$package->getName()])) {
+        foreach ($symlinks as $packageName => $symlinkDefinitions) {
+            $package = $event->getComposer()->getRepositoryManager()->getLocalRepository()->findPackage($packageName, '*');
+            if ($package !== null) {
                 $packageDir = $event->getComposer()->getInstallationManager()->getInstallPath($package);
-
-                $symlinkDefinitions = $symlinks[$package->getName()];
+                
                 foreach ($symlinkDefinitions as $target => $link) {
                     if ($fs->isAbsolutePath($target)) {
                         throw new \InvalidArgumentException(

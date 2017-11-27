@@ -26,12 +26,12 @@ class ScriptSymlinker
         $symlinks = static::getSymlinks($event);
         $fs = new Filesystem();
 
-        foreach ($symlinks as $packageName => $symlink) {
+        foreach ($symlinks as $packageName => $symlinkDefinitions) {
             $package = $event->getComposer()->getRepositoryManager()->getLocalRepository()->findPackage($packageName, '*');
             if ($package !== null) {
                 $packageDir = $event->getComposer()->getInstallationManager()->getInstallPath($package);
                 
-                foreach ($symlink as $target => $link) {
+                foreach ($symlinkDefinitions as $target => $link) {
                     if ($fs->isAbsolutePath($target)) {
                         throw new \InvalidArgumentException(
                             "Invalid symlink target path '$target' for package'{$package->getName()}'."

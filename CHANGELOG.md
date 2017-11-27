@@ -6,6 +6,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ### Changed
 - Optimized symlink to package matching
+- Update php-cs-fixer configuration
 
 ## [0.2.0] - 2016-05-27
 

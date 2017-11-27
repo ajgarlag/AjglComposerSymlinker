@@ -28,9 +28,9 @@ class ScriptSymlinker
 
         foreach ($symlinks as $packageName => $symlinkDefinitions) {
             $package = $event->getComposer()->getRepositoryManager()->getLocalRepository()->findPackage($packageName, '*');
-            if ($package !== null) {
+            if (null !== $package) {
                 $packageDir = $event->getComposer()->getInstallationManager()->getInstallPath($package);
-                
+
                 foreach ($symlinkDefinitions as $target => $link) {
                     if ($fs->isAbsolutePath($target)) {
                         throw new \InvalidArgumentException(

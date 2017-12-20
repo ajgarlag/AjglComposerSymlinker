@@ -11,8 +11,10 @@
 
 namespace Ajgl\Composer;
 
+use Composer\IO\IOInterface;
 use Composer\Script\Event;
 use Composer\Util\Filesystem;
+use Composer\Util\Platform;
 
 /**
  * Script to symlink resources installed with composer.
@@ -54,9 +56,7 @@ class ScriptSymlinker
                         );
                     }
 
-                    $event->getIO()->write("  Symlinking <comment>$targetPath</comment> to <comment>$linkPath</comment>");
-                    $fs->ensureDirectoryExists(dirname($linkPath));
-                    $fs->relativeSymlink($targetPath, $linkPath);
+                    self::link($fs, $targetPath, $linkPath, $event->getIO());
                 }
             }
         }
@@ -73,5 +73,20 @@ class ScriptSymlinker
         }
 
         return $symlinks;
+    }
+
+    protected static function link(Filesystem $fs, $source, $destination, IOInterface $io)
+    {
+        $fs->ensureDirectoryExists(dirname($destination));
+
+        if (Platform::isWindows()) {
+            $io->write("  Joining <comment>$source</comment> to <comment>$destination</comment>");
+            $fs->junction($source, $destination);
+
+            return;
+        }
+
+        $io->write("  Symlinking <comment>$source</comment> to <comment>$destination</comment>");
+        $fs->relativeSymlink($source, $destination);
     }
 }

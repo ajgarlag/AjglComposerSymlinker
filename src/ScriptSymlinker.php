@@ -81,7 +81,7 @@ class ScriptSymlinker
 
         $io->write("  Symlinking <comment>$source</comment> to <comment>$destination</comment>");
         if (!$fs->relativeSymlink($source, $destination)) {
-            $io->write("  Symlinking failed, trt joining <comment>$source</comment> to <comment>$destination</comment>");
+            $io->write("  Symlinking failed, try joining <comment>$source</comment> to <comment>$destination</comment>");
             $fs->junction($source, $destination);
         }
     }

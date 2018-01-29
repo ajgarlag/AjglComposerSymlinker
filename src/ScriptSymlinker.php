@@ -79,14 +79,10 @@ class ScriptSymlinker
     {
         $fs->ensureDirectoryExists(dirname($destination));
 
-        if (Platform::isWindows()) {
-            $io->write("  Joining <comment>$source</comment> to <comment>$destination</comment>");
-            $fs->junction($source, $destination);
-
-            return;
-        }
-
         $io->write("  Symlinking <comment>$source</comment> to <comment>$destination</comment>");
-        $fs->relativeSymlink($source, $destination);
+        if (!$fs->relativeSymlink($source, $destination)) {
+            $io->write("  Symlinking failed, try joining <comment>$source</comment> to <comment>$destination</comment>");
+            $fs->junction($source, $destination);
+        }
     }
 }

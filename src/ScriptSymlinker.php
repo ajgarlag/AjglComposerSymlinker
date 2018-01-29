@@ -80,9 +80,17 @@ class ScriptSymlinker
         $fs->ensureDirectoryExists(dirname($destination));
 
         $io->write("  Symlinking <comment>$source</comment> to <comment>$destination</comment>");
-        if (!$fs->relativeSymlink($source, $destination)) {
-            $io->write("  Symlinking failed, try joining <comment>$source</comment> to <comment>$destination</comment>");
-            $fs->junction($source, $destination);
+        if ($fs->relativeSymlink($source, $destination)) {
+            return;
         }
+
+        $io->write("  Symlinking failed, try joining <comment>$source</comment> to <comment>$destination</comment>");
+        if ($fs->junction($source, $destination)) {
+            return;
+        }
+
+        throw new \RuntimeException(
+            "Unable to link '$source' to '$destination'. Does your filesystem support links?"
+        );
     }
 }

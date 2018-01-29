@@ -4,6 +4,9 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+### Added
+- Support NTFS junction
+
 ## [0.2.1] - 2017-11-27
 
 ### Changed

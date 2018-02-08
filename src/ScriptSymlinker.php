@@ -84,8 +84,8 @@ class ScriptSymlinker
             return;
         }
 
-        $io->write("  Symlinking failed, try joining <comment>$source</comment> to <comment>$destination</comment>");
-        if ($fs->junction($source, $destination)) {
+        $io->write("  Symlinking failed, try copyinh <comment>$source</comment> to <comment>$destination</comment>");
+        if ($fs->copy($source, $destination)) {
             return;
         }
 

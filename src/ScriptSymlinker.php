@@ -84,7 +84,7 @@ class ScriptSymlinker
             return;
         }
 
-        $io->write("  Symlinking failed, try copyinh <comment>$source</comment> to <comment>$destination</comment>");
+        $io->write("  Symlinking failed, try copying <comment>$source</comment> to <comment>$destination</comment>");
         if ($fs->copy($source, $destination)) {
             return;
         }

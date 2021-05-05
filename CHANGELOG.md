@@ -4,6 +4,9 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+### Changed
+- Require `composer-plugin-api` instead of `composer/composer`
+
 ## [0.2.4] - 2021-05-05
 
 ### Added

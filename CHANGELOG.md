@@ -4,6 +4,9 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+### Added
+- Support for Composer 2
+
 ## [0.2.3] - 2021-05-05
 
 ### Fixed

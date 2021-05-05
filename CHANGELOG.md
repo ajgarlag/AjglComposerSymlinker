@@ -4,6 +4,8 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+## [0.2.3] - 2021-05-05
+
 ### Fixed
 - Remove old symlinks before recreating
 
@@ -32,7 +34,8 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## 0.1.0 - 2016-05-24
 
-[Unreleased]: https://github.com/ajgarlag/AjglComposerSymlinker/compare/0.2.2...master
+[Unreleased]: https://github.com/ajgarlag/AjglComposerSymlinker/compare/0.2.3...master
+[0.2.3]: https://github.com/ajgarlag/AjglComposerSymlinker/compare/0.2.2...0.2.3
 [0.2.2]: https://github.com/ajgarlag/AjglComposerSymlinker/compare/0.2.1...0.2.2
 [0.2.1]: https://github.com/ajgarlag/AjglComposerSymlinker/compare/0.2.0...0.2.1
 [0.2.0]: https://github.com/ajgarlag/AjglComposerSymlinker/compare/0.1.0...0.2.0

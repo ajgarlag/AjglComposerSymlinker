@@ -4,6 +4,9 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+### Fixed
+- Remove old symlinks before recreating
+
 ## [0.2.2] - 2021-04-30
 
 ### Added

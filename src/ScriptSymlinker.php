@@ -14,7 +14,6 @@ namespace Ajgl\Composer;
 use Composer\IO\IOInterface;
 use Composer\Script\Event;
 use Composer\Util\Filesystem;
-use Composer\Util\Platform;
 
 /**
  * Script to symlink resources installed with composer.
@@ -35,25 +34,17 @@ class ScriptSymlinker
 
                 foreach ($symlinkDefinitions as $target => $link) {
                     if ($fs->isAbsolutePath($target)) {
-                        throw new \InvalidArgumentException(
-                            "Invalid symlink target path '$target' for package'{$package->getName()}'."
-                            .' It must be relative.'
-                        );
+                        throw new \InvalidArgumentException("Invalid symlink target path '$target' for package'{$package->getName()}'.".' It must be relative.');
                     }
                     if ($fs->isAbsolutePath($link)) {
-                        throw new \InvalidArgumentException(
-                            "Invalid symlink link path '$link' for package'{$package->getName()}'."
-                            .' It must be relative.'
-                        );
+                        throw new \InvalidArgumentException("Invalid symlink link path '$link' for package'{$package->getName()}'.".' It must be relative.');
                     }
 
                     $targetPath = $packageDir.DIRECTORY_SEPARATOR.$target;
                     $linkPath = getcwd().DIRECTORY_SEPARATOR.$link;
 
                     if (!file_exists($targetPath)) {
-                        throw new \RuntimeException(
-                            "The target path '$targetPath' for package'{$package->getName()}' does not exist."
-                        );
+                        throw new \RuntimeException("The target path '$targetPath' for package'{$package->getName()}' does not exist.");
                     }
 
                     self::link($fs, $targetPath, $linkPath, $event->getIO());
@@ -77,6 +68,10 @@ class ScriptSymlinker
 
     protected static function link(Filesystem $fs, $source, $destination, IOInterface $io)
     {
+        if (file_exists($destination) && is_link($destination)) {
+            $fs->unlink($destination);
+        }
+
         $fs->ensureDirectoryExists(dirname($destination));
 
         $io->write("  Symlinking <comment>$source</comment> to <comment>$destination</comment>");
@@ -89,8 +84,6 @@ class ScriptSymlinker
             return;
         }
 
-        throw new \RuntimeException(
-            "Unable to link '$source' to '$destination'. Does your filesystem support links?"
-        );
+        throw new \RuntimeException("Unable to link '$source' to '$destination'. Does your filesystem support links?");
     }
 }

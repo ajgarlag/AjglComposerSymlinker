@@ -8,6 +8,9 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 - Add `Plugin` class and register package as a composer plugin
 - Add `Symlinker` class
 
+### Deprecated
+- Deprecate `ScriptSymlinker` class
+
 ### Removed
 - Remove support for Composer 1
 

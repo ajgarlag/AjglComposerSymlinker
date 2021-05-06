@@ -18,16 +18,22 @@ use Composer\Util\Filesystem;
 /**
  * Script to symlink resources installed with composer.
  *
+ * @deprecated
+ *
  * @author Antonio J. García Lagar <aj@garcialagar.es>
  */
 class ScriptSymlinker
 {
+    /**
+     * @deprecated
+     */
     public static function createSymlinks(Event $event)
     {
+        @trigger_error('Since ajgl/composer-symlinker 0.3.0', \E_USER_DEPRECATED);
         $symlinks = static::getSymlinks($event);
         $fs = new Filesystem();
 
-        $event->getIO()->write("<info>Creating symlinks</info>");
+        $event->getIO()->write('<info>Creating symlinks</info>');
         foreach ($symlinks as $packageName => $symlinkDefinitions) {
             $package = $event->getComposer()->getRepositoryManager()->getLocalRepository()->findPackage($packageName, '*');
             if (null !== $package) {

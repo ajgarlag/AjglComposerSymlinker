@@ -2,6 +2,7 @@
     "name": "ajgl/composer-symlinker",
     "description": "Composer script to symlink assets.",
     "keywords": ["composer", "assets", "composer"],
+    "type": "composer-plugin",
     "homepage": "https://github.com/ajgarlag/AjglComposerSymlinker",
     "license": "MIT",
     "authors": [
@@ -30,6 +31,7 @@
     "extra": {
         "branch-alias": {
             "dev-master": "0.3.x-dev"
-        }
+        },
+        "class": "Ajgl\\Composer\\Plugin"
     }
 }

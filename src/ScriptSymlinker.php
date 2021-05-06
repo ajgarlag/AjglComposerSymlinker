@@ -27,6 +27,7 @@ class ScriptSymlinker
         $symlinks = static::getSymlinks($event);
         $fs = new Filesystem();
 
+        $event->getIO()->write("<info>Creating symlinks</info>");
         foreach ($symlinks as $packageName => $symlinkDefinitions) {
             $package = $event->getComposer()->getRepositoryManager()->getLocalRepository()->findPackage($packageName, '*');
             if (null !== $package) {

@@ -4,6 +4,9 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+### Added
+- Add `Plugin` class and register package as a composer plugin
+
 ### Removed
 - Remove support for Composer 1
 

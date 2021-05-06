@@ -1,7 +1,7 @@
 AjglComposerSymlinker
 =====================
 
-The AjglComposerSymlinker component provides a simple Composer script to symlink paths from packages installed with
+The AjglComposerSymlinker component provides a Composer plugin to symlink paths from packages installed with
 composer to a different location. It is intended for use with web assets.
 
 [![Latest Stable Version](https://poser.pugx.org/ajgl/composer-symlinker/v/stable.png)](https://packagist.org/packages/ajgl/composer-symlinker)
@@ -10,7 +10,6 @@ composer to a different location. It is intended for use with web assets.
 [![Montly Downloads](https://poser.pugx.org/ajgl/composer-symlinker/d/monthly.png)](https://packagist.org/packages/ajgl/composer-symlinker)
 [![Daily Downloads](https://poser.pugx.org/ajgl/composer-symlinker/d/daily.png)](https://packagist.org/packages/ajgl/composer-symlinker)
 [![License](https://poser.pugx.org/ajgl/composer-symlinker/license.png)](https://packagist.org/packages/ajgl/composer-symlinker)
-[![StyleCI](https://styleci.io/repos/8555627/shield)](https://styleci.io/repos/8555627)
 
 This script allows you to install web assets to the `vendor` directory and symlink them to a directory exposed through
 an HTTP server, without the need to provide an special composer package type with a custom installer.
@@ -86,30 +85,13 @@ Create the symlinks definition adding a `ajgl-symlinks` section inside the `extr
 
 As you can see, you can link directories or files.
 
-### 3. Hook the script to composer events
-
-Add a new script definition to the `scripts` section of the composer.json file, so the symlinks are created after
-packages installation or update:
-```json
-{
-    "scripts": {
-        "post-install-cmd": [
-            "Ajgl\\Composer\\ScriptSymlinker::createSymlinks"
-        ],
-        "post-update-cmd": [
-            "Ajgl\\Composer\\ScriptSymlinker::createSymlinks"
-        ]
-    }
-}
-```
-
-### 4. Execute composer
+### 3. Execute composer
 
 Once the composer.json file is complete:
 ```json
 {
     "require": {
-        "ajgl/composer-symlinker": "^0.2",
+        "ajgl/composer-symlinker": "^0.3",
         "twbs/bootstrap": "^3.3"
     },
     "extra": {
@@ -124,38 +106,30 @@ Once the composer.json file is complete:
                 "dist/fonts/glyphicons-halflings-regular.woff2": "web/assets/fonts/glyphicons-halflings-regular.woff2"
             }
         }
-    },
-    "scripts": {
-        "post-install-cmd": [
-            "Ajgl\\Composer\\ScriptSymlinker::createSymlinks"
-        ],
-        "post-update-cmd": [
-            "Ajgl\\Composer\\ScriptSymlinker::createSymlinks"
-        ]
     }
 }
 ```
 
-Open a console and execute the composer update command:
+Open a console and execute the composer update or install command:
 ```
 $ composer update
 ```
 
 You will see the following messages in the composer output:
 ```
-> Ajgl\Composer\ScriptSymlinker::createSymlinks
-  Symlinking /home/user/project/vendor/twbs/bootstrap/dist/css to /home/user/project/web/assets/css/bootstrap
-  Symlinking /home/user/project/vendor/twbs/bootstrap/dist/js to /home/user/project/web/assets/js/bootstrap
-  Symlinking /home/user/project/vendor/twbs/bootstrap/dist/fonts/glyphicons-halflings-regular.eot to /home/user/project/web/assets/fonts/glyphicons-halflings-regular.eot
-  Symlinking /home/user/project/vendor/twbs/bootstrap/dist/fonts/glyphicons-halflings-regular.svg to /home/user/project/web/assets/fonts/glyphicons-halflings-regular.svg
-  Symlinking /home/user/project/vendor/twbs/bootstrap/dist/fonts/glyphicons-halflings-regular.ttf to /home/user/project/web/assets/fonts/glyphicons-halflings-regular.ttf
-  Symlinking /home/user/project/vendor/twbs/bootstrap/dist/fonts/glyphicons-halflings-regular.woff to /home/user/project/web/assets/fonts/glyphicons-halflings-regular.woff
-  Symlinking /home/user/project/vendor/twbs/bootstrap/dist/fonts/glyphicons-halflings-regular.woff2 to /home/user/project/web/assets/fonts/glyphicons-halflings-regular.woff2
+Creating symlinks
+  Symlinking /home/aj/tmp/lala/vendor/twbs/bootstrap/dist/css to /home/aj/tmp/lala/web/assets/css/bootstrap
+  Symlinking /home/aj/tmp/lala/vendor/twbs/bootstrap/dist/js to /home/aj/tmp/lala/web/assets/js/bootstrap
+  Symlinking /home/aj/tmp/lala/vendor/twbs/bootstrap/dist/fonts/glyphicons-halflings-regular.eot to /home/aj/tmp/lala/web/assets/fonts/glyphicons-halflings-regular.eot
+  Symlinking /home/aj/tmp/lala/vendor/twbs/bootstrap/dist/fonts/glyphicons-halflings-regular.svg to /home/aj/tmp/lala/web/assets/fonts/glyphicons-halflings-regular.svg
+  Symlinking /home/aj/tmp/lala/vendor/twbs/bootstrap/dist/fonts/glyphicons-halflings-regular.ttf to /home/aj/tmp/lala/web/assets/fonts/glyphicons-halflings-regular.ttf
+  Symlinking /home/aj/tmp/lala/vendor/twbs/bootstrap/dist/fonts/glyphicons-halflings-regular.woff to /home/aj/tmp/lala/web/assets/fonts/glyphicons-halflings-regular.woff
+  Symlinking /home/aj/tmp/lala/vendor/twbs/bootstrap/dist/fonts/glyphicons-halflings-regular.woff2 to /home/aj/tmp/lala/web/assets/fonts/glyphicons-halflings-regular.woff2
 ```
 
-### Packages not available at packagist.org
+### 4. Packages not available at packagist.org
 
-If you want to install a package that is not available in the main composer repository, you can simply define a new
+If you want to install a package that is not available in the main composer repository, you can define a new
 package inside the `repositories` section of the composer.json file.
 
 ```json

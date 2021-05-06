@@ -4,6 +4,9 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+### Removed
+- Remove support for Composer 1
+
 ## [0.2.5] - 2021-05-06
 
 ### Changed

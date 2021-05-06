@@ -4,6 +4,8 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+## [0.2.5] - 2021-05-06
+
 ### Changed
 - Require `composer-plugin-api` instead of `composer/composer`
 
@@ -42,7 +44,8 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## 0.1.0 - 2016-05-24
 
-[Unreleased]: https://github.com/ajgarlag/AjglComposerSymlinker/compare/0.2.4...master
+[Unreleased]: https://github.com/ajgarlag/AjglComposerSymlinker/compare/0.2.5...master
+[0.2.5]: https://github.com/ajgarlag/AjglComposerSymlinker/compare/0.2.4...0.2.5
 [0.2.4]: https://github.com/ajgarlag/AjglComposerSymlinker/compare/0.2.3...0.2.4
 [0.2.3]: https://github.com/ajgarlag/AjglComposerSymlinker/compare/0.2.2...0.2.3
 [0.2.2]: https://github.com/ajgarlag/AjglComposerSymlinker/compare/0.2.1...0.2.2

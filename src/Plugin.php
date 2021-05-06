@@ -33,12 +33,12 @@ final class Plugin implements PluginInterface, EventSubscriberInterface
 
     public function onPostInstallCmd(Event $event)
     {
-        ScriptSymlinker::createSymlinks($event);
+        (new Symlinker())->symlinkOnEvent($event);
     }
 
     public function onPostUpdateCmd(Event $event)
     {
-        ScriptSymlinker::createSymlinks($event);
+        (new Symlinker())->symlinkOnEvent($event);
     }
 
     public static function getSubscribedEvents()

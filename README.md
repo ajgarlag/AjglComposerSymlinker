@@ -112,19 +112,20 @@ Once the composer.json file is complete:
 
 Open a console and execute the composer update or install command:
 ```
-$ composer update
+$ composer update -v
 ```
 
 You will see the following messages in the composer output:
 ```
 Creating symlinks
-  Symlinking /home/aj/tmp/lala/vendor/twbs/bootstrap/dist/css to /home/aj/tmp/lala/web/assets/css/bootstrap
-  Symlinking /home/aj/tmp/lala/vendor/twbs/bootstrap/dist/js to /home/aj/tmp/lala/web/assets/js/bootstrap
-  Symlinking /home/aj/tmp/lala/vendor/twbs/bootstrap/dist/fonts/glyphicons-halflings-regular.eot to /home/aj/tmp/lala/web/assets/fonts/glyphicons-halflings-regular.eot
-  Symlinking /home/aj/tmp/lala/vendor/twbs/bootstrap/dist/fonts/glyphicons-halflings-regular.svg to /home/aj/tmp/lala/web/assets/fonts/glyphicons-halflings-regular.svg
-  Symlinking /home/aj/tmp/lala/vendor/twbs/bootstrap/dist/fonts/glyphicons-halflings-regular.ttf to /home/aj/tmp/lala/web/assets/fonts/glyphicons-halflings-regular.ttf
-  Symlinking /home/aj/tmp/lala/vendor/twbs/bootstrap/dist/fonts/glyphicons-halflings-regular.woff to /home/aj/tmp/lala/web/assets/fonts/glyphicons-halflings-regular.woff
-  Symlinking /home/aj/tmp/lala/vendor/twbs/bootstrap/dist/fonts/glyphicons-halflings-regular.woff2 to /home/aj/tmp/lala/web/assets/fonts/glyphicons-halflings-regular.woff2
+ Symlinking package "twbs/bootstrap"
+  Symlinking "/home/aj/tmp/lala/vendor/twbs/bootstrap/dist/css" to "/home/aj/tmp/lala/web/assets/css/bootstrap": symlink created
+  Symlinking "/home/aj/tmp/lala/vendor/twbs/bootstrap/dist/js" to "/home/aj/tmp/lala/web/assets/js/bootstrap": symlink created
+  Symlinking "/home/aj/tmp/lala/vendor/twbs/bootstrap/dist/fonts/glyphicons-halflings-regular.eot" to "/home/aj/tmp/lala/web/assets/fonts/glyphicons-halflings-regular.eot": symlink created
+  Symlinking "/home/aj/tmp/lala/vendor/twbs/bootstrap/dist/fonts/glyphicons-halflings-regular.svg" to "/home/aj/tmp/lala/web/assets/fonts/glyphicons-halflings-regular.svg": symlink created
+  Symlinking "/home/aj/tmp/lala/vendor/twbs/bootstrap/dist/fonts/glyphicons-halflings-regular.ttf" to "/home/aj/tmp/lala/web/assets/fonts/glyphicons-halflings-regular.ttf": symlink created
+  Symlinking "/home/aj/tmp/lala/vendor/twbs/bootstrap/dist/fonts/glyphicons-halflings-regular.woff" to "/home/aj/tmp/lala/web/assets/fonts/glyphicons-halflings-regular.woff": symlink created
+  Symlinking "/home/aj/tmp/lala/vendor/twbs/bootstrap/dist/fonts/glyphicons-halflings-regular.woff2" to "/home/aj/tmp/lala/web/assets/fonts/glyphicons-halflings-regular.woff2": symlink created
 ```
 
 ### 4. Packages not available at packagist.org

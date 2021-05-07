@@ -4,6 +4,8 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+## [0.3.0] - 2021-05-07
+
 ### Added
 - Add `Plugin` class and register package as a composer plugin
 - Add `Symlinker` class

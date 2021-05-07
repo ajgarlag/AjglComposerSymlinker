@@ -4,6 +4,8 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+## [0.3.1] - 2021-05-07
+
 ### Fixed
 - Rename UPGRADE file
 
@@ -59,7 +61,8 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## 0.1.0 - 2016-05-24
 
-[Unreleased]: https://github.com/ajgarlag/AjglComposerSymlinker/compare/0.3.0...master
+[Unreleased]: https://github.com/ajgarlag/AjglComposerSymlinker/compare/0.3.1...master
+[0.3.1]: https://github.com/ajgarlag/AjglComposerSymlinker/compare/0.3.0...0.3.1
 [0.3.0]: https://github.com/ajgarlag/AjglComposerSymlinker/compare/0.2.5...0.3.0
 [0.2.5]: https://github.com/ajgarlag/AjglComposerSymlinker/compare/0.2.4...0.2.5
 [0.2.4]: https://github.com/ajgarlag/AjglComposerSymlinker/compare/0.2.3...0.2.4

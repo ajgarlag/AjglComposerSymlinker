@@ -11,8 +11,8 @@ composer to a different location. It is intended for use with web assets.
 [![Daily Downloads](https://poser.pugx.org/ajgl/composer-symlinker/d/daily.png)](https://packagist.org/packages/ajgl/composer-symlinker)
 [![License](https://poser.pugx.org/ajgl/composer-symlinker/license.png)](https://packagist.org/packages/ajgl/composer-symlinker)
 
-This script allows you to install web assets to the `vendor` directory and symlink them to a directory exposed through
-an HTTP server, without the need to provide an special composer package type with a custom installer.
+This plugin allows you to install web assets to the `vendor` directory and symlink them to a directory exposed through
+an HTTP server, without the need to provide a special composer package type with a custom installer.
 
 Suppose the following project layout where we want to install the `twbs/bootstrap` package:
 ```
@@ -34,9 +34,9 @@ project/
 ```
 
 Any web asset installed with composer will be stored inside the `vendor` directory, but we need them to be stored
-inside `www/assets` directory. In the Usage section we will see how to achieve this.
+inside `www/assets` directory. In the Usage section, we will see how to achieve this.
 
-There are some alternatives, but they usually require to define a custom package type in the required package
+There are some alternatives, but they usually require defining a custom package type in the required package
 definition.
 
 Installation
@@ -110,7 +110,7 @@ Once the composer.json file is complete:
 }
 ```
 
-Open a console and execute the composer update or install command:
+Open a console and execute the `composer update` or `composer install` command:
 ```
 $ composer update -v
 ```

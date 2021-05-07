@@ -4,6 +4,9 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+### Removed
+- Remove `ScriptSymlinker` class
+
 ## [0.3.1] - 2021-05-07
 
 ### Fixed

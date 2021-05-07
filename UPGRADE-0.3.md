@@ -1,5 +1,5 @@
-UPGRADE FROM 0.2
-================
+UPGRADE FROM 0.2 TO 0.3
+=======================
 
 This component is now a Composer Plugin that is automatically executed on
 `post-install-cmd` and `post-update-cmd` events. So you should remove the

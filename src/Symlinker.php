@@ -96,7 +96,7 @@ final class Symlinker
                 $io->write(': <comment>symlink created</comment>', true, IOInterface::VERBOSE);
             }
         } catch (IOException $e) {
-            throw new \RuntimeException(sprintf('   Symlink from "%s" to "%s" failed! Error: %3', $sourcePath, $destinationPath, $e->getMessage()));
+            throw new \RuntimeException(sprintf('   Symlink from "%s" to "%s" failed! Error: "%s"', $sourcePath, $destinationPath, $e->getMessage()), 0, $e);
         }
     }
 }

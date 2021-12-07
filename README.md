@@ -83,7 +83,7 @@ Create the symlinks definition adding a `ajgl-symlinks` section inside the `extr
 }
 ```
 
-As you can see, you can link directories or files. On Windows platform, the links will be created using the junction feature of NTFS, son you can only link directories.
+As you can see, you can link directories or files. On **Windows** platform, the links will be created using the junction feature of NTFS, so you can only link directories.
 
 ### 3. Execute composer
 
